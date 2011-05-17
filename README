@@ -14,6 +14,7 @@ TODOs:
 
 - colorize different the operator > and < than <: and :>
 - get rid of the undefined comment character
+- try to get a faust group like a real major mode
 - try to colorize metadata?
 - try to colorize defining braces { } after keyword
 - try to put some basic compiling from emacs (shell faust)
