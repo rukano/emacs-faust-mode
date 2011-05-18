@@ -35,35 +35,20 @@
     "remainder" "floor" "ceil" "rint")
   "FAUST functions.")
 
-;; TODO: composition operators!
-;;(": , :> <: ~ ! _ @ ")
-;;(defvar faust-operators "\\([]<>[~:,@!]\\)")
-(defvar faust-operators "\\([(:\>)|(\<:)|~!_@,=]\\)")
-
 (defvar faust-ui-keywords
   '("button" "checkbox" "vslider" "hslider" "nentry"
     "vgroup" "hgroup" "tgroup" "vbargraph" "hbargraph")
   "FAUST gui groups?.")
 
-(defvar faust-math-op "\\([][{}()^.\\+*/%-]\\)")
-;;(defvar faust-math-op "\\([][{}()~^<>:=,.\\+*/%-@!]\\)")
-
 ;; optimize regex for words
+(defvar faust-numbers-regexp "[0-9]")
+(defvar faust-operator-regexp "\\([~!_@,<>:;]\\)")
+(defvar faust-math-op-regexp "[=\+()\{\}]")
 (defvar faust-keywords-regexp (regexp-opt faust-keywords 'words))
 (defvar faust-function-regexp (regexp-opt faust-functions 'words))
 (defvar faust-ui-keywords-regexp (regexp-opt faust-ui-keywords 'words))
-(defvar faust-operator-regexp faust-operators)
-(defvar faust-math-op-regexp faust-math-op)
-
-;; clear memory
-(setq faust-keywords nil)
-(setq faust-functions nil)
-(setq faust-operators nil)
-(setq faust-ui-keywords nil)
-(setq faust-math-op nil)
 
 ;; create the list for font-lock.
-;; each class of keyword is given a particular face
 (setq faust-font-lock-keywords
   `(
     (,faust-function-regexp . font-lock-type-face)
@@ -71,11 +56,8 @@
     (,faust-math-op-regexp . font-lock-function-name-face)
     (,faust-operator-regexp . font-lock-constant-face)
     (,faust-keywords-regexp . font-lock-keyword-face)
-    ;; note: order above matters. “faust-keywords-regexp” goes last because
-    ;; otherwise the keyword “state” in the function “state_entry”
-    ;; would be highlighted.
+    (,faust-numbers-regexp . font-lock-variable-name-face)
 ))
-
 
 ;; define the mode
 (define-derived-mode faust-mode fundamental-mode
@@ -84,13 +66,6 @@
 
   ;; code for syntax highlighting
   (setq font-lock-defaults '((faust-font-lock-keywords)))
-  
-  ;; clear memory
-  (setq faust-keywords-regexp nil)
-  (setq faust-functions-regexp nil)
-  (setq faust-operators-regexp nil)
-  (setq faust-ui-keywords-regexp nil)
-  (setq faust-math-op-regexp nil)
 )
 
 ;; comment dwin support
@@ -105,3 +80,29 @@ For detail, see `comment-dwim'."
 (modify-syntax-entry ?\/ ". 12b" faust-mode-syntax-table)
 (modify-syntax-entry ?\n "> b" faust-mode-syntax-table)
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; OLD CODE
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; TODO: composition operators!
+;;(": , :> <: ~ ! _ @ ")
+;;(defvar faust-operators "\\([]<>[~:,@!]\\)")
+;;(defvar faust-operators "\\([~!_@,<>:;]\\)")
+
+;;(defvar faust-math-op "[=\+()\{\}]") ;; add * and /
+;;(defvar faust-math-op "\\([][{}()^\\+*/%-=]\\)")
+;;(defvar faust-math-op "\\([][{}()~^<>:=,.\\+*/%-@!]\\)")
+;; clear memory
+;; (setq faust-keywords nil)
+;; (setq faust-functions nil)
+;; (setq faust-operators nil)
+;; (setq faust-ui-keywords nil)
+;; (setq faust-math-op nil)
+
+
+;; ;; clear memory
+;; (setq faust-keywords-regexp nil)
+;; (setq faust-functions-regexp nil)
+;; (setq faust-operators-regexp nil)
+;; (setq faust-ui-keywords-regexp nil)
+;; (setq faust-math-op-regexp nil)
