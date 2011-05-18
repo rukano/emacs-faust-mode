@@ -23,8 +23,7 @@
   '("process" "with" "case" "seq" "par" "sum" "prod"
     "include" "import" "component" "library" "environment" "declare"
     "define" "undef" "error" "pragma" "ident"
-    "if" "def" "else" "elif" "endif" "line" "warning")
-  "FAUST keywords.")
+    "if" "def" "else" "elif" "endif" "line" "warning"))
  
 (defvar faust-functions
   '("mem" "prefix" "int" "float"
@@ -32,18 +31,18 @@
     "ffunction" "fconstant" "fvariable"
     "attach" "acos" "asin" "atan" "atan2" "cos" "sin" "tan" "exp"
     "log" "log10" "pow" "sqrt" "abs" "min" "max" "fmod"
-    "remainder" "floor" "ceil" "rint")
-  "FAUST functions.")
+    "remainder" "floor" "ceil" "rint"))
 
 (defvar faust-ui-keywords
   '("button" "checkbox" "vslider" "hslider" "nentry"
-    "vgroup" "hgroup" "tgroup" "vbargraph" "hbargraph")
-  "FAUST gui groups?.")
+    "vgroup" "hgroup" "tgroup" "vbargraph" "hbargraph"))
 
 ;; optimize regex for words
-(defvar faust-numbers-regexp "[0-9]")
+;;(defvar faust-math-op-regexp "[=\+()\{\}*-]")
+(defvar faust-variables-regexp "[A-Za-z]")
+(defvar faust-arguments-regexp "[0-9]")
 (defvar faust-operator-regexp "\\([~!_@,<>:;]\\)")
-(defvar faust-math-op-regexp "[=\+()\{\}]")
+(defvar faust-math-op-regexp "[=\+\{\}()/*-]")
 (defvar faust-keywords-regexp (regexp-opt faust-keywords 'words))
 (defvar faust-function-regexp (regexp-opt faust-functions 'words))
 (defvar faust-ui-keywords-regexp (regexp-opt faust-ui-keywords 'words))
@@ -56,7 +55,8 @@
     (,faust-math-op-regexp . font-lock-function-name-face)
     (,faust-operator-regexp . font-lock-constant-face)
     (,faust-keywords-regexp . font-lock-keyword-face)
-    (,faust-numbers-regexp . font-lock-variable-name-face)
+    (,faust-variables-regexp . font-lock-variable-name-face)
+;;    (,faust-arguments-regexp . font-lock-warning-face)
 ))
 
 ;; define the mode
