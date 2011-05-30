@@ -39,7 +39,7 @@
 
 ;; optimize regex for words
 ;;(defvar faust-math-op-regexp "[=\+()\{\}*-]")
-(defvar faust-variables-regexp "[A-Za-z]")
+(defvar faust-variables-regexp "[A-Za-z][A-Za-z]*")
 (defvar faust-arguments-regexp "[0-9]")
 (defvar faust-operator-regexp "\\([~!_@,<>:;]\\)")
 (defvar faust-math-op-regexp "[=\+\{\}()/*-]")
