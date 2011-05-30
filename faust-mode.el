@@ -77,8 +77,10 @@ For detail, see `comment-dwim'."
    (let ((deactivate-mark nil) (comment-start "//") (comment-end ""))
      (comment-dwim arg)))
 
-(modify-syntax-entry ?\/ ". 12b" faust-mode-syntax-table)
+(modify-syntax-entry ?/  ". 124b" faust-mode-syntax-table)
+(modify-syntax-entry ?*  ". 23" faust-mode-syntax-table)
 (modify-syntax-entry ?\n "> b" faust-mode-syntax-table)
+(modify-syntax-entry ?\^m "> b" faust-mode-syntax-table)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; OLD CODE
