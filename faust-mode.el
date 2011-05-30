@@ -55,7 +55,7 @@
     (,faust-math-op-regexp . font-lock-function-name-face)
     (,faust-operator-regexp . font-lock-constant-face)
     (,faust-keywords-regexp . font-lock-keyword-face)
-    (,faust-variables-regexp . font-lock-variable-name-face)
+;;    (,faust-variables-regexp . font-lock-variable-name-face)
 ;;    (,faust-arguments-regexp . font-lock-warning-face)
 ))
 
