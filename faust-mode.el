@@ -24,7 +24,7 @@
     "include" "import" "component" "library" "environment" "declare"
     "define" "undef" "error" "pragma" "ident"
     "if" "def" "else" "elif" "endif" "line" "warning"))
- 
+
 (defvar faust-functions
   '("mem" "prefix" "int" "float"
     "rdtable" "rwtable" "select2" "select3"
@@ -66,7 +66,9 @@
 
   ;; code for syntax highlighting
   (setq font-lock-defaults '((faust-font-lock-keywords)))
-)
+
+  ;; modify the keymap
+  (define-key faust-mode-map [remap comment-dwim] 'faust-comment-dwim))
 
 ;; comment dwin support
 (defun faust-comment-dwim (arg)
