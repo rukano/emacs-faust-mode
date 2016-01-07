@@ -1,3 +1,5 @@
+;;; faust-mode.el --- Basic faust syntax colorizer for emacs.
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; FAUST Mode (very simple syntax colorizing!)
 ;; by rukano
