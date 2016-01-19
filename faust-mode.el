@@ -1,5 +1,13 @@
 ;;; faust-mode.el --- Basic faust syntax colorizer for emacs.
 
+;; Copyright (C) 2016 Juan A. Romero
+
+;; Author: Juan A. Romero
+;; Maintainer: Bart Brouns
+;; URL: https://github.com/magnetophon/emacs-faust-mode
+
+;;; Commentary:
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; FAUST Mode (very simple syntax colorizing!)
 ;; by rukano
@@ -20,6 +28,8 @@
 ;; export option and list possibilities
 ;; create hotkeys for every compilation
 ;; view graph
+
+;;; Code:
 
 (defvar faust-keywords
   '("process" "with" "case" "seq" "par" "sum" "prod"
@@ -50,7 +60,7 @@
 (defvar faust-ui-keywords-regexp (regexp-opt faust-ui-keywords 'words))
 
 ;; create the list for font-lock.
-(setq faust-font-lock-keywords
+(defvar faust-font-lock-keywords
   `(
     (,faust-function-regexp . font-lock-type-face)
     (,faust-ui-keywords-regexp . font-lock-builtin-face)
@@ -62,6 +72,7 @@
 ))
 
 ;; define the mode
+;;;###autoload
 (define-derived-mode faust-mode fundamental-mode
   "FAUST mode"
   "Major mode for editing FAUST files (Functional Audio Stream)…"
@@ -112,3 +123,6 @@ For detail, see `comment-dwim'."
 ;; (setq faust-operators-regexp nil)
 ;; (setq faust-ui-keywords-regexp nil)
 ;; (setq faust-math-op-regexp nil)
+
+(provide 'faust-mode)
+;;; faust-mode.el ends here
