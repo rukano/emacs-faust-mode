@@ -114,3 +114,4 @@ For detail, see `comment-dwim'."
 ;; (setq faust-math-op-regexp nil)
 
 (provide 'faust-mode)
+;;; faust-mode.el ends here
