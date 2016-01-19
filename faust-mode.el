@@ -72,6 +72,7 @@
 ))
 
 ;; define the mode
+;;;###autoload
 (define-derived-mode faust-mode fundamental-mode
   "FAUST mode"
   "Major mode for editing FAUST files (Functional Audio Stream)…"
