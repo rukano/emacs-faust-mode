@@ -112,3 +112,5 @@ For detail, see `comment-dwim'."
 ;; (setq faust-operators-regexp nil)
 ;; (setq faust-ui-keywords-regexp nil)
 ;; (setq faust-math-op-regexp nil)
+
+(provide 'faust-mode)
