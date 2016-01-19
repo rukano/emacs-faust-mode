@@ -60,7 +60,7 @@
 (defvar faust-ui-keywords-regexp (regexp-opt faust-ui-keywords 'words))
 
 ;; create the list for font-lock.
-(setq faust-font-lock-keywords
+(defvar faust-font-lock-keywords
   `(
     (,faust-function-regexp . font-lock-type-face)
     (,faust-ui-keywords-regexp . font-lock-builtin-face)
