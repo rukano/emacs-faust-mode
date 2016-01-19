@@ -1,5 +1,13 @@
 ;;; faust-mode.el --- Basic faust syntax colorizer for emacs.
 
+;; Copyright (C) 2016 Juan A. Romero
+
+;; Author: Juan A. Romero
+;; Maintainer: Bart Brouns
+;; URL: https://github.com/magnetophon/emacs-faust-mode
+
+;;; Commentary:
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; FAUST Mode (very simple syntax colorizing!)
 ;; by rukano
@@ -20,6 +28,8 @@
 ;; export option and list possibilities
 ;; create hotkeys for every compilation
 ;; view graph
+
+;;; Code:
 
 (defvar faust-keywords
   '("process" "with" "case" "seq" "par" "sum" "prod"
