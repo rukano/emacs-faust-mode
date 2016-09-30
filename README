@@ -16,8 +16,11 @@ TODOs:
 - try to get a faust group like a real major mode
 - try to colorize metadata?
 - try to colorize defining braces { } after keyword
-- try to put some basic compiling from emacs (shell faust)
 - try to offer an export buffer for c++ code
+
+I implemented the following in https://github.com/syl20bnr/spacemacs/tree/develop/layers/%2Blang/faust
+
+- try to put some basic compiling from emacs (shell faust)
 - try to offer mutiple available choices for compile
 - define a default compile option (caqt/supercollider?)
 - try to view the graph from emacs
