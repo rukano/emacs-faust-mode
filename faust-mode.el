@@ -1,11 +1,12 @@
 ;;; faust-mode.el --- Faust syntax highlighting and indentation for Emacs.
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; FAUST Mode (very simple syntax colorizing!)
-;; by rukano
-;; based on the tutorial on:
-;; http://xahlee.org/emacs/elisp_syntax_coloring.html
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Author: rukano <rukano@gmail.com>
+;; Maintainer: Yassin Philip <xaccrocheur@gmail.com>
+;; Keywords: languages, faust
+;; Version: 0.2
+;; URL: https://github.com/rukano/emacs-faust-mode
+;; License: GPLv3
+;; MELPA: yes
 
 (require 'smie)
 
@@ -22,8 +23,6 @@
 
 (defconst faust-keywords-ui
   '("button" "checkbox" "vslider" "hslider" "nentry" "vgroup" "hgroup" "tgroup" "vbargraph" "hbargraph"))
-
-;; Lib!
 
 (defconst faust-keywords-lib-analyzer
   '("amp_follower" "amp_follower_ud" "amp_follower_ar" "mth_octave_analyzer[N]" "mth_octave_spectral_level6e" "octave_filterbank" "octave_analyzer" "half_octave_filterbank" "half_octave_analyzer" "third_octave_filterbank" "third_octave_analyzer" "analyzer"))

@@ -20,6 +20,7 @@ Copy/Clone this repository in in `load-path` and put
 
 in your init file.
 
+## Usage
 
 ```elisp
 M-x faust-mode
@@ -31,5 +32,9 @@ To do this automatically for every Faust file, add something like this to your i
 (require 'faust-mode)
 (setq auto-mode-alist (cons '("\\.dsp$" . faust-mode) auto-mode-alist))
 ```
+
+## Notes
+
+See [Faustine](https://bitbucket.org/yassinphilip/faustine) to go even further into turning emacs iton a full-fledged Faust IDE.
 
 ---
