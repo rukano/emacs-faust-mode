@@ -51,17 +51,18 @@
 
 ;; create the list for font-lock.
 (setq faust-font-lock-keywords
-  `(
-    (,faust-function-regexp . font-lock-type-face)
-    (,faust-ui-keywords-regexp . font-lock-builtin-face)
-    (,faust-math-op-regexp . font-lock-function-name-face)
-    (,faust-operator-regexp . font-lock-constant-face)
-    (,faust-keywords-regexp . font-lock-keyword-face)
-;;    (,faust-variables-regexp . font-lock-variable-name-face)
-;;    (,faust-arguments-regexp . font-lock-warning-face)
-))
+      `(
+        (,faust-function-regexp . font-lock-type-face)
+        (,faust-ui-keywords-regexp . font-lock-builtin-face)
+        (,faust-math-op-regexp . font-lock-function-name-face)
+        (,faust-operator-regexp . font-lock-constant-face)
+        (,faust-keywords-regexp . font-lock-keyword-face)
+        ;;    (,faust-variables-regexp . font-lock-variable-name-face)
+        ;;    (,faust-arguments-regexp . font-lock-warning-face)
+        ))
 
 ;; define the mode
+;;;###autoload
 (define-derived-mode faust-mode fundamental-mode
   "FAUST mode"
   "Major mode for editing FAUST files (Functional Audio Stream)…"
@@ -86,29 +87,7 @@ For detail, see `comment-dwim'."
 (modify-syntax-entry ?\n "> b" faust-mode-syntax-table)
 (modify-syntax-entry ?\^m "> b" faust-mode-syntax-table)
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; OLD CODE
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(provide 'faust-mode)
 
-;; TODO: composition operators!
-;;(": , :> <: ~ ! _ @ ")
-;;(defvar faust-operators "\\([]<>[~:,@!]\\)")
-;;(defvar faust-operators "\\([~!_@,<>:;]\\)")
-
-;;(defvar faust-math-op "[=\+()\{\}]") ;; add * and /
-;;(defvar faust-math-op "\\([][{}()^\\+*/%-=]\\)")
-;;(defvar faust-math-op "\\([][{}()~^<>:=,.\\+*/%-@!]\\)")
-;; clear memory
-;; (setq faust-keywords nil)
-;; (setq faust-functions nil)
-;; (setq faust-operators nil)
-;; (setq faust-ui-keywords nil)
-;; (setq faust-math-op nil)
-
-
-;; ;; clear memory
-;; (setq faust-keywords-regexp nil)
-;; (setq faust-functions-regexp nil)
-;; (setq faust-operators-regexp nil)
-;; (setq faust-ui-keywords-regexp nil)
-;; (setq faust-math-op-regexp nil)
+;; End:
+;;; faust-mode.el ends here
