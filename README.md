@@ -1,6 +1,6 @@
 # Faust-mode
 
-Faust syntax highlighting and indentation for Emacs.
+[Faust](http://faust.grame.fr) syntax highlighting and indentation for Emacs.
 
 ---
 
