@@ -35,6 +35,6 @@ To do this automatically for every Faust file, add something like this to your i
 
 ## Notes
 
-See [Faustine](https://bitbucket.org/yassinphilip/faustine) to go even further into turning emacs iton a full-fledged Faust IDE.
+See [Faustine](https://bitbucket.org/yassinphilip/faustine) to go even further into turning emacs into a full-fledged Faust IDE.
 
 ---
