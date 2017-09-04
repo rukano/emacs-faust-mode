@@ -1,4 +1,4 @@
-;;; faust-mode.el --- Basic faust syntax colorizer for emacs.
+;;; faust-mode.el --- Faust syntax highlighting and indentation for Emacs.
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; FAUST Mode (very simple syntax colorizing!)
@@ -63,7 +63,7 @@
 
 ;; define the mode
 ;;;###autoload
-(define-derived-mode faust-mode fundamental-mode
+(define-derived-mode faust-mode prog-mode
   "FAUST mode"
   "Major mode for editing FAUST files (Functional Audio Stream)…"
 
