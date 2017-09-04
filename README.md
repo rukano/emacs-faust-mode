@@ -4,7 +4,7 @@
 
 ---
 
-[![License GPLv3](https://img.shields.io/badge/license-GPL_v3-green.svg)] [![MELPA](https://melpa.org/packages/faust-mode-badge.svg)](https://melpa.org/#/faust-mode) [![MELPA Stable](https://stable.melpa.org/packages/faust-mode-badge.svg)](https://stable.melpa.org/#/faust-mode)
+[![License GPLv3](https://img.shields.io/badge/license-GPL_v3-green.svg)](http://www.gnu.org/licenses/gpl-3.0.html) [![MELPA](https://melpa.org/packages/faust-mode-badge.svg)](https://melpa.org/#/faust-mode) [![MELPA Stable](https://stable.melpa.org/packages/faust-mode-badge.svg)](https://stable.melpa.org/#/faust-mode)
 
 ## Installation
 
