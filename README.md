@@ -4,9 +4,21 @@
 
 ---
 
+[![License GPLv3](https://img.shields.io/badge/license-GPL_v3-green.svg)] [![MELPA](https://melpa.org/packages/faust-mode-badge.svg)](https://melpa.org/#/faust-mode) [![MELPA Stable](https://stable.melpa.org/packages/faust-mode-badge.svg)](https://stable.melpa.org/#/faust-mode)
+
 ## Installation
 
-Copy/Clone this repository in in `load-path` and use 
+### Easy
+
+Install it from [MELPA](https://melpa.org/#/getting-started).
+
+### Manual
+
+Copy/Clone this repository in in `load-path` and put 
+
+`(require 'faust-mode)`
+
+in your init file.
 
 
 ```elisp
