@@ -8,6 +8,12 @@
 ;; License: GPLv3
 ;; MELPA: yes
 
+;;; Commentary
+
+;; See also Faustine
+
+;;; Code:
+
 (require 'smie)
 
 (defvar ac-sources)
