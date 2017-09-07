@@ -1,7 +1,10 @@
 ;;; faust-mode.el --- Faust syntax highlighting and indentation for Emacs.
 
 ;; Author: rukano <rukano@gmail.com>
+;; Author: Juan A. Romero <rukano@gmail.com>
+;; Author: Yassin Philip <xaccrocheur@gmail.com>
 ;; Maintainer: Yassin Philip <xaccrocheur@gmail.com>
+;; Maintainer: Juan A. Romero <rukano@gmail.com>
 ;; Keywords: languages, faust
 ;; Version: 0.2
 ;; URL: https://github.com/rukano/emacs-faust-mode
