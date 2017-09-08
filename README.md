@@ -1,7 +1,7 @@
 # Faust-Mode
  *Faust syntax colorizer for Emacs.*
 ___
-[![License GPLv3](https://img.shields.io/badge/license-GPL_v3-green.svg)](http://www.gnu.org/licenses/gpl-3.0.html) [![MELPA](https://melpa.org/packages/faust-mode-badge.svg)](https://melpa.org/#/faust-mode) [![MELPA](https://stable.melpa.org/packages/faust-mode-badge.svg)](https://melpa.org/#/faust-mode) 
+[![License GPLv3](https://img.shields.io/badge/license-GPL_v3-green.svg)](http://www.gnu.org/licenses/gpl-3.0.html) [![MELPA](https://melpa.org/packages/faust-mode-badge.svg)](https://melpa.org/#/faust-mode) [![MELPA](https://stable.melpa.org/packages/faust-mode-badge.svg)](https://stable.melpa.org/#/faust-mode) 
 
 
 ## Features
@@ -43,6 +43,8 @@ Faust-Mode introduces 1 major mode, detailed below.
 Major mode for editing
 [Faust](http://faust.grame.fr) (Functional AUdio STream) files.
 
+Syntax highlighting of *all* the Faust commands and operators, as
+well as indentation rules.
 
 In addition to any hooks its parent mode `prog-mode` might have run,
 this mode runs the hook `faust-mode-hook`, as the final step
@@ -50,4 +52,4 @@ during initialization.
 
 
 ___
-*README.md made on 2017-09-08 at 13:42:14 with [doc-a-mode](https://bitbucket.org/yassinphilip/doc-a-mode)*
+*README.md made on 2017-09-08 at 14:58:12 with [doc-a-mode](https://bitbucket.org/yassinphilip/doc-a-mode)*
