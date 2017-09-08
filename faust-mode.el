@@ -1,4 +1,4 @@
-;;; faust-mode.el --- Basic faust syntax colorizer for emacs.
+;;; faust-mode.el --- Faust syntax colorizer for Emacs.
 
 ;; Copyright (C) 2016 Juan A. Romero
 
@@ -6,7 +6,6 @@
 ;; Author: Juan A. Romero <rukano@gmail.com>
 ;; Author: Yassin Philip <xaccrocheur@gmail.com>
 ;; Maintainer: Yassin Philip <xaccrocheur@gmail.com>
-;; Maintainer: Juan A. Romero <rukano@gmail.com>
 ;; Keywords: languages, faust
 ;; Version: 0.2
 ;; URL: https://github.com/rukano/emacs-faust-mode
