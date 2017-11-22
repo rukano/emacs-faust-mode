@@ -33,7 +33,7 @@ PATH.
 
 ### Faustine
 
-Based on faust-mode, [Faustine](https://bitbucket.org/yassinphilip/faustine) goes even further into turning Emacs into a full-fledged Faust IDE.
+Based on faust-mode, [Faustine](https://bitbucket.org/yphil/faustine) goes even further into turning Emacs into a full-fledged Faust IDE.
 
 ## Major modes
 
@@ -46,10 +46,10 @@ Major mode for editing
 Syntax highlighting of *all* the Faust commands and operators, as
 well as indentation rules.
 
-In addition to any hooks its parent mode `prog-mode` might have run,
-this mode runs the hook `faust-mode-hook`, as the final step
+In addition to any hooks its parent mode ‘prog-mode’ might have run,
+this mode runs the hook ‘faust-mode-hook’, as the final step
 during initialization.
 
 
 ___
-*README.md made on 2017-09-08 at 14:58:12 with [doc-a-mode](https://bitbucket.org/yassinphilip/doc-a-mode)*
+*README.md made on 2017-11-22 at 12:14:16 with [doc-a-mode](https://bitbucket.org/yphil/doc-a-mode)*
