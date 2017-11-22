@@ -57,7 +57,7 @@
 
 ;; ### Faustine
 
-;; Based on faust-mode, [Faustine](https://bitbucket.org/yassinphilip/faustine) goes even further into turning Emacs into a full-fledged Faust IDE.
+;; Based on faust-mode, [Faustine](https://bitbucket.org/yphil/faustine) goes even further into turning Emacs into a full-fledged Faust IDE.
 
 ;;; Code:
 
