@@ -18,7 +18,8 @@
 ;;; Code:
 
 
-(require 'smie)
+;; disabled for now until we have a Faust grammar for SMIE - agraef
+;; (require 'smie)
 
 (defvar ac-sources)
 
@@ -167,11 +168,12 @@ well as indentation rules. "
 
   (if (boundp 'ac-sources)
       (progn
-        (add-to-list 'ac-modes 'faustine-mode)
-        (add-to-list 'ac-sources 'faustine-mode-ac-source))
+        (add-to-list 'ac-modes 'faust-mode)
+        (add-to-list 'ac-sources 'faust-mode-ac-source))
     (message "You really should install and use auto-complete"))
 
-  (smie-setup nil #'ignore)
+  ;; disabled for now until we have a Faust grammar for SMIE - agraef
+  ;; (smie-setup nil #'ignore)
 
   (set-syntax-table faust-mode-syntax-table))
 
