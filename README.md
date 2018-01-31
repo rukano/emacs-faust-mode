@@ -33,8 +33,4 @@ To do this automatically for every Faust file, add something like this to your i
 (setq auto-mode-alist (cons '("\\.dsp$" . faust-mode) auto-mode-alist))
 ```
 
-## Notes
-
-See [Faustine](https://bitbucket.org/yassinphilip/faustine) to go even further into turning emacs into a full-fledged Faust IDE.
-
 ---
