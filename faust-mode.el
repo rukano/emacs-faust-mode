@@ -1,4 +1,6 @@
-;;; faust-mode.el --- Faust syntax highlighting and indentation for Emacs.
+;;; faust-mode.el --- Faust syntax colorizer for Emacs.
+
+;; Copyright (C) 2016 Juan A. Romero
 
 ;; Author: rukano <rukano@gmail.com>
 ;; Author: Juan A. Romero <rukano@gmail.com>
@@ -10,10 +12,53 @@
 ;; URL: https://github.com/rukano/emacs-faust-mode
 ;; License: GPLv3
 ;; MELPA: yes
+;; MELPA-stable: yes
 
-;;; Commentary
+;; This program is free software; you can redistribute it and/or modify
+;; it under the terms of the GNU General Public License as published by
+;; the Free Software Foundation, either version 3 of the License, or
+;; (at your option) any later version.
 
-;; See also Faustine
+;; This program is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+;; GNU General Public License for more details.
+
+;; You should have received a copy of the GNU General Public License
+;; along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+;;; Commentary:
+
+;; ## Features
+
+;; - Syntax highlighting of *all* the Faust commands and operators
+;; - Indentation rules
+;; - [Compatible](https://github.com/syl20bnr/spacemacs/tree/develop/layers/%2Blang/faust) with SpaceEmacs
+
+;; ## Installation
+
+;; ### Easy
+
+;; - Install it from [MELPA](https://melpa.org).
+
+;; ### Hard
+
+;; - Copy/clone this repository in `load-path`
+;; - Add
+;; ```elisp
+;; (require 'faust-mode)
+;; ```
+;; to your init file
+
+;; ### Faust
+
+;; Oh, and of course install [the latest
+;; Faust](http://faust.grame.fr/download/) and ensure it's in the
+;; PATH.
+
+;; ### Faustine
+
+;; Based on faust-mode, [Faustine](https://bitbucket.org/yphil/faustine) goes even further into turning Emacs into a full-fledged Faust IDE.
 
 ;;; Code:
 
@@ -159,7 +204,7 @@
 [Faust](http://faust.grame.fr) (Functional AUdio STream) files.
 
 Syntax highlighting of *all* the Faust commands and operators, as
-well as indentation rules. "
+well as indentation rules."
 
   (setq
    comment-start "//"

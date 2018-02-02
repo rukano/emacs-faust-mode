@@ -1,36 +1,55 @@
-# Faust-mode
+# Faust-Mode
+ *Faust syntax colorizer for Emacs.*
+___
+[![License GPLv3](https://img.shields.io/badge/license-GPL_v3-green.svg)](http://www.gnu.org/licenses/gpl-3.0.html) [![MELPA](https://melpa.org/packages/faust-mode-badge.svg)](https://melpa.org/#/faust-mode) [![MELPA](https://stable.melpa.org/packages/faust-mode-badge.svg)](https://stable.melpa.org/#/faust-mode) 
 
-[Faust](http://faust.grame.fr) syntax highlighting and indentation for Emacs.
 
----
+## Features
 
-[![License GPLv3](https://img.shields.io/badge/license-GPL_v3-green.svg)](http://www.gnu.org/licenses/gpl-3.0.html) [![MELPA](https://melpa.org/packages/faust-mode-badge.svg)](https://melpa.org/#/faust-mode) [![MELPA Stable](https://stable.melpa.org/packages/faust-mode-badge.svg)](https://stable.melpa.org/#/faust-mode)
+- Syntax highlighting of *all* the Faust commands and operators
+- Indentation rules
+- [Compatible](https://github.com/syl20bnr/spacemacs/tree/develop/layers/%2Blang/faust) with SpaceEmacs
 
 ## Installation
 
 ### Easy
 
-Install it from [MELPA](https://melpa.org/#/getting-started).
+- Install it from [MELPA](https://melpa.org).
 
-### Manual
+### Hard
 
-Copy/Clone this repository in in `load-path` and put 
-
-`(require 'faust-mode)`
-
-in your init file.
-
-## Usage
-
-```elisp
-M-x faust-mode
-```
-
-To do this automatically for every Faust file, add something like this to your init file:
-
+- Copy/clone this repository in `load-path`
+- Add
 ```elisp
 (require 'faust-mode)
-(setq auto-mode-alist (cons '("\\.dsp$" . faust-mode) auto-mode-alist))
 ```
+to your init file
 
----
+### Faust
+
+Oh, and of course install [the latest
+Faust](http://faust.grame.fr/download/) and ensure it's in the
+PATH.
+
+### Faustine
+
+Based on faust-mode, [Faustine](https://bitbucket.org/yphil/faustine) goes even further into turning Emacs into a full-fledged Faust IDE.
+
+## Major modes
+
+Faust-Mode introduces 1 major mode, detailed below.
+
+### faust-mode
+Major mode for editing
+[Faust](http://faust.grame.fr) (Functional AUdio STream) files.
+
+Syntax highlighting of *all* the Faust commands and operators, as
+well as indentation rules.
+
+In addition to any hooks its parent mode ‘prog-mode’ might have run,
+this mode runs the hook ‘faust-mode-hook’, as the final step
+during initialization.
+
+
+___
+*README.md made on 2017-11-22 at 12:14:16 with [doc-a-mode](https://bitbucket.org/yphil/doc-a-mode)*
