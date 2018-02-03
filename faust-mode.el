@@ -201,13 +201,22 @@
 ;; grammar given here is just a minimal version of the Faust grammar for the
 ;; sole purpose of defining proper indentation. We also offer two variables
 ;; faust-indent and faust-outdent-with which let you customize some aspects of
-;; the indentation, see below for details.
+;; the indentation, and it's possible to turn off SMIE altogether if it's not
+;; working for you, see below for details.
 
 (defgroup faust nil
   "Major mode for editing Faust code."
   :link '(custom-group-link :tag "Font Lock Faces group" font-lock-faces)
   :prefix "faust-"
   :group 'languages)
+
+(defcustom faust-enable-smie t
+  "Whether Faust mode does auto-indentation using SMIE.
+Non-nil means that auto-indentation using SMIE is enabled.
+Please note that this option will only take effect in newly
+created Faust buffers."
+  :type 'boolean
+  :group 'faust)
 
 ;; I prefer small indentation levels, so the default indent is 2, but you can
 ;; change this by customizing the following variable.
@@ -281,7 +290,7 @@ that buffer."
 (defun faust-smie-reset ()
   "Reset the SMIE setup in the current Faust buffer."
   (interactive)
-  (when (derived-mode-p 'faust-mode)
+  (when (and (derived-mode-p 'faust-mode) faust-enable-smie)
     (smie-setup faust-smie-grammar #'faust-smie-rules)))
 
 (defun faust-smie-rules (kind token)
@@ -315,7 +324,8 @@ library functions is available if you install and enable the
         (add-to-list 'ac-sources 'faust-mode-ac-source))
     (message "You really should install and use auto-complete"))
 
-  (smie-setup faust-smie-grammar #'faust-smie-rules)
+  (when faust-enable-smie
+    (smie-setup faust-smie-grammar #'faust-smie-rules))
 
   (set-syntax-table faust-mode-syntax-table))
 
