@@ -297,11 +297,12 @@ that buffer."
 ;;;###autoload
 (define-derived-mode faust-mode prog-mode
   "Faust"
-  "Major mode for editing
-[Faust](http://faust.grame.fr) (Functional AUdio STream) files.
+  "Major mode for editing Faust code (URL `http://faust.grame.fr').
 
-Syntax highlighting of *all* the Faust commands and operators, as
-well as indentation rules."
+Provides syntax highlighting of Faust keywords and library
+functions, as well as indentation rules. Auto-completion of
+library functions is available if you install and enable the
+`auto-complete' package available from MELPA."
 
   (setq
    comment-start "//"
