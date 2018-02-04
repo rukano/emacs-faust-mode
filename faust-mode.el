@@ -209,9 +209,9 @@
 ;; agraef: Preliminary Faust SMIE support. Due to restrictions in SMIE, the
 ;; grammar given here is just a minimal version of the Faust grammar for the
 ;; sole purpose of defining proper indentation. We also offer two variables
-;; faust-indent and faust-outdent-with which let you customize some aspects of
-;; the indentation, and it's possible to turn off SMIE altogether if it's not
-;; working for you, see below for details.
+;; faust-indent and faust-outdent-blocks which let you customize some aspects
+;; of the indentation, and it's possible to turn off SMIE altogether if it's
+;; not working for you, see below for details.
 
 (defgroup faust nil
   "Major mode for editing Faust code."
@@ -251,16 +251,19 @@ created Faust buffers."
 ;;     foo = bar;
 ;;   };
 ;;
-;; I think that this looks better, so this is the default right now, but you
-;; can change the indentation style of these constructs by customizing the
-;; following `faust-outdent-with' variable (set it to `nil' if you prefer to
-;; indent relative to the right-hand side of a definition).
+;; I think that this looks better and it also matches the indentation style
+;; used in the Faust Quick Reference, so this is the default right now.
+;; But if you prefer the former style, you can get that by setting the
+;; `faust-outdent-blocks' variable to `nil'. Also note that even if the latter
+;; style is used, you can make sure that a block expression is interpreted as
+;; part of the right-hand side (and indented accordingly) by just enclosing
+;; the entire block expression in parentheses.
 
-(defun faust-make-smie-grammar (outdent-with)
+(defun faust-make-smie-grammar (outdent-blocks)
   (smie-prec2->grammar
    (smie-bnf->prec2
     `((id)
-      ,(if outdent-with
+      ,(if outdent-blocks
 	   '(def ("declare" id)
 		 (id "=" exp)
 		 (id "=" exp "with" "{" defs "}")
@@ -279,7 +282,7 @@ created Faust buffers."
     '((assoc ";"))
     '((nonassoc "=") (assoc "~") (assoc ",") (assoc ":") (assoc "<:" ":>")))))
 
-(defcustom faust-outdent-with t
+(defcustom faust-outdent-blocks t
   "Configure indentation of Faust block constructs.
 Non-nil means to indent the `with' and `letrec' constructs
 relative to the definition, not the right-hand side expression.
@@ -290,11 +293,11 @@ existing Faust buffer, you have to run \\[faust-smie-reset] in
 that buffer."
   :type 'boolean
   :set (lambda (_symbol value)
-	 (setq-default faust-outdent-with value)
+	 (setq-default faust-outdent-blocks value)
 	 (setq faust-smie-grammar (faust-make-smie-grammar value)))
   :group 'faust)
 
-(defvar faust-smie-grammar (faust-make-smie-grammar faust-outdent-with))
+(defvar faust-smie-grammar (faust-make-smie-grammar faust-outdent-blocks))
 
 (defun faust-smie-reset ()
   "Reset the SMIE setup in the current Faust buffer."
