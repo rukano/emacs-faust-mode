@@ -174,7 +174,7 @@
   "All Faust keywords and functions.")
 
 (defvar faust-mode-ac-source
-  '((candidates . faust-keywords-lib)))
+  '((candidates . faust-keywords-all)))
 
 (defvar faust-regexp-keywords-function (regexp-opt faust-keywords-functions 'words))
 (defvar faust-regexp-keywords-statement (regexp-opt faust-keywords-statements 'words))
