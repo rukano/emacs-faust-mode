@@ -194,6 +194,7 @@
     (modify-syntax-entry ?\n "> b" st)
     (modify-syntax-entry ?\^m "> b" st)
     (modify-syntax-entry ?\\ "." st)
+    (modify-syntax-entry ?\' "_" st)
     st)
   "Syntax table for `faust-mode'.")
 
