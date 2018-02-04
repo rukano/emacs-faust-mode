@@ -187,14 +187,22 @@
     (,faust-regexp-faust-delimiters . font-lock-reference-face)
     (,faust-regexp-faust-numbers . font-lock-negation-char-face)))
 
+;; agraef: We derive the syntax table from C mode here since it's much closer
+;; to Faust's lexical syntax than the default syntax table which seems to be
+;; geared more towards Lisp. That way we get comment syntax for free and only
+;; need to fix up \ and ' which are just ordinary punction in Faust.
+(require 'cc-mode)
 (defvar faust-mode-syntax-table
-  (let ((st (make-syntax-table)))
-    (modify-syntax-entry ?/  ". 124b" st)
-    (modify-syntax-entry ?*  ". 23" st)
-    (modify-syntax-entry ?\n "> b" st)
-    (modify-syntax-entry ?\^m "> b" st)
+  (let ((st (make-syntax-table c-mode-syntax-table)))
     (modify-syntax-entry ?\\ "." st)
-    (modify-syntax-entry ?\' "_" st)
+    ;; XXXFIXME: ' should really be punctuation, but for reasons unknown to
+    ;; mankind this completely throws off SMIE's automatic indentation
+    ;; engine. Adding ' to the SMIE grammar or indentation rules doesn't help
+    ;; with that either. We work around this by just declaring ' a prefix
+    ;; character for now (word or symbol constituent works, too, but has other
+    ;; unwanted implications). If anyone has a better idea on how to fix this,
+    ;; please let me know! -agraef
+    (modify-syntax-entry ?\' "'" st)
     st)
   "Syntax table for `faust-mode'.")
 
