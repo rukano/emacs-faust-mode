@@ -160,6 +160,19 @@
    faust-keywords-lib-vaeffect)
   "All the Faust library function keywords.")
 
+(defvar faust-keywords-misc
+  (append
+   faust-keywords-statements
+   faust-keywords-functions
+   faust-keywords-ui)
+  "Miscellaneous Faust keywords and built-in functions.")
+
+(defvar faust-keywords-all
+  (append
+   faust-keywords-misc
+   faust-keywords-lib)
+  "All Faust keywords and functions.")
+
 (defvar faust-mode-ac-source
   '((candidates . faust-keywords-lib)))
 
