@@ -71,7 +71,7 @@
   '("process" "with" "letrec" "case" "seq" "par" "sum" "prod" "include" "import" "component" "library" "environment" "declare" "define" "undef" "error" "pragma" "ident" "if" "def" "else" "elif" "endif" "line" "warning"))
 
 (defconst faust-keywords-functions
-  '("mem" "prefix" "int" "float" "rdtable" "rwtable" "select2" "select3" "ffunction" "fconstant" "fvariable" "attach" "acos" "asin" "atan" "atan2" "cos" "sin" "tan" "exp" "log" "log10" "pow" "sqrt" "abs" "min" "max" "fmod" "remainder" "floor" "ceil" "rint"))
+  '("mem" "prefix" "int" "float" "rdtable" "rwtable" "select2" "select3" "ffunction" "fconstant" "fvariable" "attach" "acos" "asin" "atan" "atan2" "cos" "sin" "tan" "exp" "log" "log10" "pow" "sqrt" "abs" "min" "max" "fmod" "remainder" "floor" "ceil" "rint" "xor"))
 
 (defconst faust-keywords-ui
   '("button" "checkbox" "vslider" "hslider" "nentry" "vgroup" "hgroup" "tgroup" "vbargraph" "hbargraph"))
@@ -181,7 +181,7 @@
 (defvar faust-regexp-keywords-ui (regexp-opt faust-keywords-ui 'words))
 (defvar faust-regexp-keywords-lib (regexp-opt faust-keywords-lib 'words))
 
-(defconst faust-regexp-faust-operator (rx (any ",:*-+><")))
+(defconst faust-regexp-faust-operator (rx (any ",'@:*/%^-+|&~>=<!")))
 
 (defconst faust-regexp-faust-delimiters (rx (any "{}()[];")))
 
