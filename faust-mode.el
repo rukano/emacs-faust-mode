@@ -325,6 +325,10 @@ that buffer."
      (if (smie-rule-hanging-p) (smie-rule-parent)))
     ))
 
+(defvar faust-font-lock-syntactic-keywords
+  '(;; <mdoc> .. </mdoc> sections are treated as comments
+    ("\\(<\\)mdoc>" 1 "!" t) ("</mdoc\\(>\\)" 1 "!" t)))
+
 ;;;###autoload
 (define-derived-mode faust-mode prog-mode
   "Faust"
@@ -338,7 +342,11 @@ library functions is available if you install and enable the
   (setq
    comment-start "//"
    comment-end ""
-   font-lock-defaults '(faust-mode-font-lock-keywords))
+   comment-start-skip "\\(//+\\|/\\*+\\)\\s *"
+   font-lock-defaults
+   '(faust-mode-font-lock-keywords
+     nil nil nil nil
+     (font-lock-syntactic-keywords . faust-font-lock-syntactic-keywords)))
 
   (if (boundp 'ac-sources)
       (progn
